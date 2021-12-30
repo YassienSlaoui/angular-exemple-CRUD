@@ -1,0 +1,34 @@
+<!--#myForm="ngForm" (submit)="fuctiont()"-->
+<form [formGroup]="myForm" (submit)="submit()">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <!--ngModel #email="ngModel" required minlength="15" (change)="legObj(email)"-->
+      <input type="email" name="email"
+
+        class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  formControlName="email" >
+        <div *ngIf="email.pending"><img src="https://c.tenor.com/5o2p0tH5LFQAAAAi/hug.gif" style="width: 20px;height: 10px;" alt=""></div>
+      <div *ngIf="email.touched && email.invalid" class="alert alert-danger">
+        <div *ngIf="email.errors?.required">Please Enter You Email</div>
+        <div *ngIf="email.errors?.noSpaceAllowed">no Space Allowed</div>
+        <div *ngIf="email.errors?.maxlength">Max Length is 10</div>
+        <div *ngIf="email.errors?.shouldEmailBeUnique">Email Aleardy Exist</div>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <!-- ngModel #password="ngModel"-->
+      <input type="password" name="password"x class="form-control" id="exampleInputPassword1" formControlName="password">
+    </div>
+   <!-- <div class="mb-3">
+      <label  class="form-label">Url</label>
+
+      <input class="form-control" type="text" ngModel  name="field" #field="ngModel" url/>
+      <p *ngIf="field.errors?.url">error message</p>
+    </div>-->
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <!---[disabled]="myForm.invalid"-->
+    <button type="submit"  class="btn btn-primary">Submit</button>
+  </form>

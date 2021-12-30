@@ -1,0 +1,18 @@
+<!--
+  <span class="glyphicon" [class.glyphicon-heart]="isfavorite" [class.glyphicon-heart-empty]="!isfavorite"
+  (click)="onFavoriteClick()">
+</span>
+-->
+<span class="glyphicon"
+[ngClass]="{
+  'glyphicon-heart':isfavorite,
+  'glyphicon-heart-empty':!isfavorite
+}"
+[ngStyle]="{
+  'backgroundColor':'#CCC'
+  }"
+  (click)="onFavoriteClick()">
+</span>
+<span>
+  {{ hello | cutWord:5 }}
+</span>

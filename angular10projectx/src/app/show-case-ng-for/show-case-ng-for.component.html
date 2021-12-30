@@ -1,0 +1,17 @@
+<div *ngIf="persons.length >0 ;then personsList else noPersonsList"></div>
+<ng-template #personsList>
+  <ul>
+    <li *ngFor="let person of persons ;let i = index">
+      <button (click)="remove(i)">remove</button> {{ person.name }}
+      <ul>
+        <li *ngFor="let lan of person.language ">
+        {{ lan }}
+        </li>
+      </ul>
+    </li>
+  </ul>
+</ng-template>
+<ng-template #noPersonsList>
+  noPersonsList
+</ng-template>
+

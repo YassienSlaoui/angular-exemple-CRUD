@@ -1,0 +1,16 @@
+<form (submit)="AddEmploye()"> 
+   
+    <div class="form-group">
+        <label for="exampleFormControlInput2">Email Id:</label>
+        <input type="text" class="form-control" id="exampleFormControlInputé" placeholder="Email ID" name="emailId" [(ngModel)]="employeeAded.emailId" >
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlInput3">First Name:</label>
+        <input type="text" class="form-control" id="exampleFormControlInput3" placeholder="First Name" name="firstName" [(ngModel)]="employeeAded.firstName" >
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlInput4">Last Name:</label>
+        <input type="text" class="form-control" id="exampleFormControlInput4" placeholder="Last Name" name="lastName" [(ngModel)]="employeeAded.lastName" >
+    </div> 
+    <button class = "btn btn-success" type ="submit">Submit</button>
+  </form>

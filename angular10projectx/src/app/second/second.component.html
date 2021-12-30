@@ -1,0 +1,35 @@
+<div>
+  <ul *ngFor="let myCour of myCours">
+    <li>{{ myCour }}</li>
+    <li [class]=myCour> <p [textContent]=myCour></p></li>
+    <li><img [src]=myCour></li>
+  </ul>
+</div>
+
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Email address</label>
+  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" [(ngModel)]="email" (change)="inputWrite(email)">
+  <p> {{ email }}</p>
+</div>
+<div class="mb-3">
+  <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+</div>
+<button [style.backgroundColor]="isActive? 'yellow' : 'blue' " (click)=changecolor($event) type="button">IsActiveButton</button>
+<button (click)=hello()>Hello</button>
+<button (click)=getObservabel()>Hello</button>
+
+<table border="1px solid black">
+<tr>
+  <th>userId</th>
+  <th>id</th>
+  <th>title</th>
+  <th>body</th>
+</tr>
+<tr *ngFor="let data of dataArray">
+  <td>{{data.userId}}</td>
+  <td>{{data.id}}</td>
+  <td>{{data.title}}</td>
+  <td>{{ data.body }}</td>
+</tr>
+</table>
